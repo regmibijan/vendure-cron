@@ -60,7 +60,7 @@ const run = async (username, password) => {
       mode: "cors",
     });
     const data = await res.json();
-    if (data?.data?.activeAdministrator == null || Math.random() < 0.5) {
+    if (data?.data?.activeAdministrator == null ) {
       // If somehow the token is invalidated re-login and get new token
       console.log(`[*] No active admin found. Trying to re-login.`);
       token = await login(username, password);
